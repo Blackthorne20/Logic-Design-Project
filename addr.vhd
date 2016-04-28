@@ -18,7 +18,9 @@ begin
 	process(en)
 	begin
 		if(en = '1') then
-		result <= a + b;
+			result <= a + b;
+		else
+			result <= "00000000";
 		end if;
 	end process;
 end rtl;

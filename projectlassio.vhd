@@ -1,6 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity projectlassio is
+entity choosereg is
 	port 
 	(			
 		ins	 : in unsigned	(15 downto 0);
@@ -13,7 +15,7 @@ entity projectlassio is
 	);
 end entity;
 
-architecture rtl of projectlassio is
+architecture rtl of choosereg is
 begin
 	process(ins) begin
 	enal <= '0';
@@ -88,12 +90,12 @@ begin
 				out2 <= bl;
 				
 				if(ins(5 downto 0) = "000011") then
-					enal <= '1';
-					enbl <= '0';
-					
-				elsif(ins(5 downto 0) = "011000") then
 					enal <= '0';
 					enbl <= '1';
+					
+				elsif(ins(5 downto 0) = "011000") then
+					enal <= '1';
+					enbl <= '0';
 					
 				else
 					enal <= '0';
@@ -124,6 +126,7 @@ begin
 --INC case
 		elsif(ins(15 downto 3) = "1111111011000") then
 		
+			
 			if(ins(2 downto 0) = "000") then
 				enal <= '1';
 				enbl <= '0';
@@ -145,12 +148,12 @@ begin
 			out2 <= bl;
 			
 			if(ins(5 downto 0) = "000011") then
-				enal <= '1';
-				enbl <= '0';
-				
-			elsif(ins(5 downto 0) = "011000") then
 				enal <= '0';
 				enbl <= '1';
+				
+			elsif(ins(5 downto 0) = "011000") then
+				enal <= '1';
+				enbl <= '0';
 				
 			else
 				enal <= '0';
@@ -181,12 +184,12 @@ begin
 				out2 <= bl;
 				
 				if(ins(5 downto 0) = "000011") then
-					enal <= '1';
-					enbl <= '0';
-					
-				elsif(ins(5 downto 0) = "011000") then
 					enal <= '0';
 					enbl <= '1';
+					
+				elsif(ins(5 downto 0) = "011000") then
+					enal <= '1';
+					enbl <= '0';
 					
 				else
 					enal <= '0';
